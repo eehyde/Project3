@@ -133,7 +133,6 @@ conn.commit()
 query = "SELECT time_posted FROM Tweets"
 cur.execute(query)
 tweet_posted_times = cur.fetchall()
-
 # Select all of the tweets (the full rows/tuples of information) that have been retweeted MORE than 2 times, and fetch them into the variable more_than_2_rts.
 query = "SELECT * FROM Tweets WHERE retweets >2"
 cur.execute(query)
@@ -160,9 +159,8 @@ conn.close()
 # Also note that the SET type is what this function should return, NOT a list or tuple. We looked at very briefly at sets when we looked at set comprehensions last week. In a Python 3 set, which is a special data type, it's a lot like a combination of a list and a dictionary: no key-value pairs, BUT each element in a set is by definition unique. You can't have duplicates.
 
 # If you want to challenge yourself here -- this function definition (what goes under the def statement) CAN be written in one line! Definitely, definitely fine to write it with multiple lines, too, which will be much easier and clearer.
-
-
-
+def get_twitter_users(astring):
+	return set(re.findall(r'@([A-Za-z0-9_]+)',astring))
 
 
 #########
