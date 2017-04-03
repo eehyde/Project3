@@ -96,6 +96,7 @@ cur.execute(table_spec)
 
 # Invoke the function you defined above to get a list that represents a bunch of tweets from the UMSI timeline. Save those tweets in a variable called umsi_tweets.
 umsi_tweets = get_user_tweets('UMSI')
+pprint(umsi_tweets)
 
 tweet_id = []
 author =[]
